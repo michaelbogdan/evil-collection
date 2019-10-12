@@ -20,4 +20,8 @@ lint:
 test:
 	cask exec ert-runner
 
+magit-test: elpa
+	$(CASK) exec $(EMACS) -Q -batch $(LOADPATH) \
+-l evil-collection-magit-tests.el -f ert-run-tests-batch-and-exit
+
 .PHONY: compile lint test
